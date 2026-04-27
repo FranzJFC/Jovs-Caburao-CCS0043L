@@ -31,10 +31,24 @@
     $summary = 'Dedicated Bachelor of Science in Information Technology student specializing in Web and Mobile Application Development. Experienced in developing full-stack web applications and collaborative mobile solutions. Proficient in PHP, JavaScript, Python, and Java with demonstrated expertise in building responsive web platforms such as DocPlant and Healthmate App. Committed to delivering user-centric, high-quality digital solutions that solve real-world problems.';
     
     // Variable for section headers
+    $section_professional_summary = 'PROFESSIONAL SUMMARY';
     $section_education = 'EDUCATION';
     $section_skills = 'SKILLS';
     $section_certifications = 'CERTIFICATIONS';
     $section_experience = 'EXPERIENCE';
+    $section_languages = 'LANGUAGES';
+    $section_projects = 'PROJECTS';
+    $section_interests = 'INTERESTS';
+    
+    // Variable for skill labels
+    $skills_technical_label = 'Technical Skills:';
+    $skills_soft_label = 'Soft Skills:';
+    
+    // Education info variables
+    $education_degree = 'Bachelor of Science in Information Technology';
+    $education_school = 'Far Eastern University Institute of Technology';
+    $education_period = '2024 - 2028';
+    $education_description = 'Department of Computer Studies, Web and Mobile Development';
     
     // Arrays for skills
     $technical_skills = array('PHP', 'HTML', 'CSS', 'JavaScript', 'MySQL','Git', 'Python', 'Java');
@@ -47,11 +61,6 @@
         array('name' => 'Information Technology Specialist - Python', 'issuer' => 'Certiport'),
     );
     
-    // Variable for section headers
-    $section_languages = 'LANGUAGES';
-    $section_projects = 'PROJECTS';
-    $section_interests = 'INTERESTS';
-    
     // Array for languages
     $languages = array('Filipino', 'English',);
     
@@ -60,6 +69,28 @@
         array('title' => 'Personal Portfolio Website', 'description' => 'Created a responsive portfolio website using HTML, CSS, and PHP to showcase academic projects and skills.'),
         array('title' => 'DocPlant', 'description' => 'Collaborative project developed with groupmates. A comprehensive document management and plant care tracking application with intuitive user interface and database integration.'),
         array('title' => 'Healthmate App', 'description' => 'Group project designed to help users track health metrics and wellness goals. Features real-time data monitoring, health recommendations, and user-friendly dashboard.')
+    );
+    
+    // Array for experience
+    $experience = array(
+        array(
+            'title' => 'Full-Stack Web & Mobile Application Developer',
+            'company' => 'DocPlant - Group Project',
+            'period' => '2024 - 2025',
+            'description' => 'Developed a comprehensive document management and plant care tracking application. Implemented responsive UI using HTML, CSS, and JavaScript. Built backend logic with PHP and database integration with MySQL. Collaborated with groupmates using Git version control and agile development practices.'
+        ),
+        array(
+            'title' => 'Mobile Health Application Developer',
+            'company' => 'Healthmate App - Collaborative Project',
+            'period' => '2025 - 2026',
+            'description' => 'Designed and developed a health tracking application with real-time data monitoring and personalized health recommendations. Implemented user authentication, dashboard analytics, and responsive mobile-first design. Utilized PHP, JavaScript, and database optimization for performance and scalability.'
+        ),
+        array(
+            'title' => 'Web Developer & Designer',
+            'company' => 'Personal Portfolio Website',
+            'period' => '2026 - Present',
+            'description' => 'Created a professional portfolio website to showcase web development projects and technical skills. Implemented modern design principles, responsive layouts, and PHP-driven dynamic content.'
+        )
     );
     
     // Array for interests
@@ -86,7 +117,7 @@
             
             <!-- Professional Summary -->
             <section>
-                <h2>PROFESSIONAL SUMMARY</h2>
+                <h2><?php echo $section_professional_summary; ?></h2>
                 <div class="section-content">
                     <p><?php echo $summary; ?></p>
                 </div>
@@ -97,9 +128,9 @@
                 <h2><?php echo $section_education; ?></h2>
                 <div class="section-content">
                     <div class="item">
-                        <div class="item-title">Bachelor of Science in Information Technology</div>
-                        <div class="item-subtitle">Far Eastern University Institue of Technology | 2024 - 2028</div>
-                        <div class="item-description">Department of Computer Studies, Web and Mobile Development</div>
+                        <div class="item-title"><?php echo $education_degree; ?></div>
+                        <div class="item-subtitle"><?php echo $education_school; ?> | <?php echo $education_period; ?></div>
+                        <div class="item-description"><?php echo $education_description; ?></div>
                     </div>
                 </div>
             </section>
@@ -108,7 +139,7 @@
             <section>
                 <h2><?php echo $section_skills; ?></h2>
                 <div class="section-content">
-                    <p style="margin-bottom: 15px;"><strong>Technical Skills:</strong></p>
+                    <p style="margin-bottom: 15px;"><strong><?php echo $skills_technical_label; ?></strong></p>
                     <div class="skills-grid">
                         <?php
                             foreach($technical_skills as $skill) {
@@ -117,7 +148,7 @@
                         ?>
                     </div>
                     
-                    <p style="margin-top: 20px; margin-bottom: 15px;"><strong>Soft Skills:</strong></p>
+                    <p style="margin-top: 20px; margin-bottom: 15px;"><strong><?php echo $skills_soft_label; ?></strong></p>
                     <div class="skills-grid">
                         <?php
                             foreach($soft_skills as $skill) {
@@ -147,21 +178,15 @@
             <section>
                 <h2><?php echo $section_experience; ?></h2>
                 <div class="section-content">
-                    <div class="item">
-                        <div class="item-title">Full-Stack Web & Mobile Application Developer</div>
-                        <div class="item-subtitle">DocPlant - Group Project | 2024 - 2025</div>
-                        <div class="item-description">Developed a comprehensive document management and plant care tracking application. Implemented responsive UI using HTML, CSS, and JavaScript. Built backend logic with PHP and database integration with MySQL. Collaborated with groupmates using Git version control and agile development practices.</div>
-                    </div>
-                    <div class="item">
-                        <div class="item-title">Mobile Health Application Developer</div>
-                        <div class="item-subtitle">Healthmate App - Collaborative Project | 2025 - 2026</div>
-                        <div class="item-description">Designed and developed a health tracking application with real-time data monitoring and personalized health recommendations. Implemented user authentication, dashboard analytics, and responsive mobile-first design. Utilized PHP, JavaScript, and database optimization for performance and scalability.</div>
-                    </div>
-                    <div class="item">
-                        <div class="item-title">Web Developer & Designer</div>
-                        <div class="item-subtitle">Personal Portfolio Website | 2026 - Present</div>
-                        <div class="item-description">Created a professional portfolio website to showcase web development projects and technical skills. Implemented modern design principles, responsive layouts, and PHP-driven dynamic content.</div>
-                    </div>
+                    <?php
+                        foreach($experience as $exp) {
+                            echo '<div class="item">';
+                            echo '<div class="item-title">' . $exp['title'] . '</div>';
+                            echo '<div class="item-subtitle">' . $exp['company'] . ' | ' . $exp['period'] . '</div>';
+                            echo '<div class="item-description">' . $exp['description'] . '</div>';
+                            echo '</div>';
+                        }
+                    ?>
                 </div>
             </section>
             
