@@ -151,12 +151,12 @@
                     </div>
                     <div class="item">
                         <div class="item-title">Mobile Health Application Developer</div>
-                        <div class="item-subtitle">Healthmate App - Collaborative Project | 2024 - 2025</div>
+                        <div class="item-subtitle">Healthmate App - Collaborative Project | 2025 - 2026</div>
                         <div class="item-description">Designed and developed a health tracking application with real-time data monitoring and personalized health recommendations. Implemented user authentication, dashboard analytics, and responsive mobile-first design. Utilized PHP, JavaScript, and database optimization for performance and scalability.</div>
                     </div>
                     <div class="item">
                         <div class="item-title">Web Developer & Designer</div>
-                        <div class="item-subtitle">Personal Portfolio Website | 2024 - Present</div>
+                        <div class="item-subtitle">Personal Portfolio Website | 2026 - Present</div>
                         <div class="item-description">Created a professional portfolio website to showcase web development projects and technical skills. Implemented modern design principles, responsive layouts, and PHP-driven dynamic content.</div>
                     </div>
                 </div>
