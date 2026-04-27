@@ -69,6 +69,9 @@
     <div class="container">
         <!-- Header Section -->
         <div class="header">
+            <div class="profile-picture">
+                <img src="profile.png" alt="<?php echo $firstname . ' ' . $lastname; ?>" class="profile-img">
+            </div>
             <h1><?php echo $firstname . ' ' . $lastname; ?></h1>
             <p><?php echo $title; ?></p>
             <div class="contact-info">
