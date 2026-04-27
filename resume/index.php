@@ -145,9 +145,19 @@
                 <h2><?php echo $section_experience; ?></h2>
                 <div class="section-content">
                     <div class="item">
-                        <div class="item-title">Web Development Projects</div>
-                        <div class="item-subtitle">Academic Portfolio | 2024 - Present</div>
-                        <div class="item-description">Developing web applications using PHP, HTML, CSS, and JavaScript. Focus on creating responsive and user-friendly interfaces with proper coding standards and practices.</div>
+                        <div class="item-title">Full-Stack Web & Mobile Application Developer</div>
+                        <div class="item-subtitle">DocPlant - Group Project | 2024 - 2025</div>
+                        <div class="item-description">Developed a comprehensive document management and plant care tracking application. Implemented responsive UI using HTML, CSS, and JavaScript. Built backend logic with PHP and database integration with MySQL. Collaborated with groupmates using Git version control and agile development practices.</div>
+                    </div>
+                    <div class="item">
+                        <div class="item-title">Mobile Health Application Developer</div>
+                        <div class="item-subtitle">Healthmate App - Collaborative Project | 2024 - 2025</div>
+                        <div class="item-description">Designed and developed a health tracking application with real-time data monitoring and personalized health recommendations. Implemented user authentication, dashboard analytics, and responsive mobile-first design. Utilized PHP, JavaScript, and database optimization for performance and scalability.</div>
+                    </div>
+                    <div class="item">
+                        <div class="item-title">Web Developer & Designer</div>
+                        <div class="item-subtitle">Personal Portfolio Website | 2024 - Present</div>
+                        <div class="item-description">Created a professional portfolio website to showcase web development projects and technical skills. Implemented modern design principles, responsive layouts, and PHP-driven dynamic content.</div>
                     </div>
                 </div>
             </section>
