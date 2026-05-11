@@ -82,7 +82,7 @@
         <h1>Multiplication Table</h1>
         <table>
             <?php
-                // Generate multiplication table from 0 to 10
+                // generate multiplication table from 0 to 10
                 for ($i = 0; $i <= 10; $i++) {
                     echo "<tr>";
                     
