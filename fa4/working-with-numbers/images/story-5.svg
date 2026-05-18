@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+  <rect width="400" height="300" fill="#f2e4d4" />
+  <rect x="80" y="70" width="240" height="20" fill="#7a5c4b" />
+  <rect x="150" y="90" width="20" height="150" fill="#7a5c4b" />
+  <rect x="230" y="90" width="20" height="150" fill="#7a5c4b" />
+  <circle cx="200" cy="210" r="50" fill="#d9b28a" />
+  <text x="20" y="280" font-family="Georgia, serif" font-size="20" fill="#5e4633">Story 5</text>
+</svg>

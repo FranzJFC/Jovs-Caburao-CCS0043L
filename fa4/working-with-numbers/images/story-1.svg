@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+  <rect width="400" height="300" fill="#f1e5d6" />
+  <path d="M40 220 L200 70 L360 220 Z" fill="#c97c5d" />
+  <circle cx="300" cy="70" r="28" fill="#f2c14e" />
+  <rect x="90" y="210" width="220" height="10" fill="#8d6e63" />
+  <text x="20" y="280" font-family="Georgia, serif" font-size="20" fill="#5c3d2e">Story 1</text>
+</svg>
