@@ -1,0 +1,74 @@
+:root {
+    --border: #7b7b7b;
+    --header-bg: #f1f1f1;
+    --caption-bg: #f8f8f8;
+    --page-bg: #f4f2ed;
+    --ink: #222;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Times New Roman", Times, serif;
+    color: var(--ink);
+    background: var(--page-bg);
+}
+
+.page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+.volume-table {
+    width: min(760px, 95vw);
+    border-collapse: collapse;
+    background: #fff;
+}
+
+.volume-table caption {
+    caption-side: top;
+    font-weight: 700;
+    padding: 6px 12px;
+    background: var(--caption-bg);
+    border: 1px solid var(--border);
+    border-bottom: none;
+}
+
+.volume-table th,
+.volume-table td {
+    border: 1px solid var(--border);
+    padding: 8px 10px;
+    vertical-align: middle;
+}
+
+.volume-table th {
+    background: var(--header-bg);
+    text-align: center;
+    font-weight: 700;
+}
+
+.values-cell {
+    width: 45%;
+}
+
+.formula-cell {
+    width: 30%;
+    text-align: center;
+}
+
+.answer-cell {
+    width: 25%;
+    text-align: center;
+}
+
+@media (max-width: 640px) {
+    .volume-table {
+        font-size: 0.95rem;
+    }
+}
