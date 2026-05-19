@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120">
+  <rect width="120" height="120" rx="8" fill="#fff1db" />
+  <ellipse cx="62" cy="66" rx="30" ry="38" fill="#f39c12" stroke="#d68910" stroke-width="3" />
+  <path d="M66 26 C74 20, 84 20, 92 28 C84 30, 76 30, 66 26 Z" fill="#27ae60" />
+  <text x="60" y="108" text-anchor="middle" font-size="12" fill="#333" font-family="Palatino Linotype, serif">Mango</text>
+</svg>

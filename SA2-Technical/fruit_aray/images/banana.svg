@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120">
+  <rect width="120" height="120" rx="8" fill="#fff4cf" />
+  <path d="M22 70 C48 88, 86 86, 104 60 C82 70, 50 70, 28 52 Z" fill="#f1c40f" stroke="#d4ac0d" stroke-width="3" />
+  <circle cx="24" cy="61" r="4" fill="#8e5b2a" />
+  <circle cx="100" cy="63" r="4" fill="#8e5b2a" />
+  <text x="60" y="108" text-anchor="middle" font-size="12" fill="#333" font-family="Palatino Linotype, serif">Banana</text>
+</svg>

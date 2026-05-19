@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120">
+  <rect width="120" height="120" rx="8" fill="#e9f7ef" />
+  <path d="M24 84 A36 36 0 0 1 96 84 Z" fill="#2ecc71" stroke="#27ae60" stroke-width="3" />
+  <path d="M32 84 A28 28 0 0 1 88 84 Z" fill="#e74c3c" />
+  <circle cx="52" cy="70" r="2" fill="#2d3436" />
+  <circle cx="68" cy="70" r="2" fill="#2d3436" />
+  <text x="60" y="108" text-anchor="middle" font-size="12" fill="#333" font-family="Palatino Linotype, serif">Watermelon</text>
+</svg>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120">
+  <rect width="120" height="120" rx="8" fill="#ffeef1" />
+  <path d="M60 34 C42 40, 32 58, 36 78 C40 98, 80 98, 84 78 C88 58, 78 40, 60 34 Z" fill="#e74c3c" stroke="#c0392b" stroke-width="3" />
+  <circle cx="52" cy="62" r="2" fill="#f1c40f" />
+  <circle cx="68" cy="62" r="2" fill="#f1c40f" />
+  <circle cx="60" cy="74" r="2" fill="#f1c40f" />
+  <path d="M60 28 L52 36 L60 34 L68 36 Z" fill="#2ecc71" />
+  <text x="60" y="108" text-anchor="middle" font-size="12" fill="#333" font-family="Palatino Linotype, serif">Strawberry</text>
+</svg>

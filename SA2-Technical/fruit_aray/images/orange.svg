@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120">
+  <rect width="120" height="120" rx="8" fill="#fff1db" />
+  <circle cx="60" cy="66" r="34" fill="#f39c12" stroke="#e67e22" stroke-width="3" />
+  <circle cx="60" cy="66" r="6" fill="#f5c269" />
+  <text x="60" y="108" text-anchor="middle" font-size="12" fill="#333" font-family="Palatino Linotype, serif">Orange</text>
+</svg>

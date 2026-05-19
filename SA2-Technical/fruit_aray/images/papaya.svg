@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120">
+  <rect width="120" height="120" rx="8" fill="#fff1e3" />
+  <ellipse cx="60" cy="66" rx="28" ry="40" fill="#f4a261" stroke="#e07a5f" stroke-width="3" />
+  <ellipse cx="60" cy="70" rx="10" ry="18" fill="#8d5524" opacity="0.5" />
+  <text x="60" y="108" text-anchor="middle" font-size="12" fill="#333" font-family="Palatino Linotype, serif">Papaya</text>
+</svg>

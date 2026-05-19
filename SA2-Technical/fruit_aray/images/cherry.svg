@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120">
+  <rect width="120" height="120" rx="8" fill="#ffeef1" />
+  <circle cx="48" cy="74" r="20" fill="#d63031" stroke="#b22222" stroke-width="3" />
+  <circle cx="78" cy="74" r="20" fill="#d63031" stroke="#b22222" stroke-width="3" />
+  <path d="M48 54 C50 36, 68 30, 80 28" stroke="#2d3436" stroke-width="3" fill="none" />
+  <path d="M78 54 C78 38, 70 32, 62 30" stroke="#2d3436" stroke-width="3" fill="none" />
+  <text x="60" y="108" text-anchor="middle" font-size="12" fill="#333" font-family="Palatino Linotype, serif">Cherry</text>
+</svg>

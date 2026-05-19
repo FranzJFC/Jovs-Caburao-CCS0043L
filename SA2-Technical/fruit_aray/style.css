@@ -1,0 +1,98 @@
+:root {
+    --border: #6b6b6b;
+    --header-bg: #f2f2f2;
+    --caption-bg: #f8f8f8;
+    --table-bg: #ffffff;
+    --page-bg-start: #f7f3e9;
+    --page-bg-end: #fff7d8;
+    --ink: #2f2f2f;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    color: var(--ink);
+    background: linear-gradient(135deg, var(--page-bg-start), var(--page-bg-end));
+}
+
+.page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+.fruit-table {
+    width: min(980px, 94vw);
+    border-collapse: collapse;
+    background: var(--table-bg);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.fruit-table caption {
+    caption-side: top;
+    font-weight: 700;
+    padding: 8px 12px;
+    background: var(--caption-bg);
+    border: 1px solid var(--border);
+    border-bottom: none;
+}
+
+.fruit-table th,
+.fruit-table td {
+    border: 1px solid var(--border);
+    padding: 8px 10px;
+    vertical-align: middle;
+}
+
+.fruit-table th {
+    background: var(--header-bg);
+    text-align: center;
+}
+
+.image-cell {
+    width: 140px;
+    text-align: center;
+}
+
+.image-cell img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border: 1px solid #bdbdbd;
+    background: #fff2c2;
+    border-radius: 4px;
+    display: block;
+    margin: 0 auto;
+}
+
+.name-cell {
+    width: 120px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.desc-cell {
+    width: 140px;
+    text-align: center;
+}
+
+.facts-cell {
+    line-height: 1.4;
+}
+
+@media (max-width: 720px) {
+    .fruit-table {
+        font-size: 0.95rem;
+    }
+
+    .image-cell img {
+        width: 90px;
+        height: 90px;
+    }
+}

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120">
+  <rect width="120" height="120" rx="8" fill="#fff4e6" />
+  <circle cx="60" cy="68" r="34" fill="#e74c3c" stroke="#c0392b" stroke-width="3" />
+  <rect x="56" y="28" width="8" height="16" fill="#7f4f24" />
+  <path d="M64 30 C74 22, 84 22, 92 30 C84 34, 74 34, 64 30 Z" fill="#2ecc71" />
+  <text x="60" y="108" text-anchor="middle" font-size="12" fill="#333" font-family="Palatino Linotype, serif">Apple</text>
+</svg>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120">
+  <rect width="120" height="120" rx="8" fill="#f3ecff" />
+  <circle cx="60" cy="42" r="12" fill="#8e44ad" />
+  <circle cx="45" cy="58" r="12" fill="#8e44ad" />
+  <circle cx="75" cy="58" r="12" fill="#8e44ad" />
+  <circle cx="60" cy="74" r="12" fill="#8e44ad" />
+  <circle cx="45" cy="90" r="12" fill="#8e44ad" />
+  <circle cx="75" cy="90" r="12" fill="#8e44ad" />
+  <rect x="56" y="22" width="8" height="12" fill="#2d3436" />
+  <text x="60" y="108" text-anchor="middle" font-size="12" fill="#333" font-family="Palatino Linotype, serif">Grapes</text>
+</svg>
