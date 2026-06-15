@@ -4,7 +4,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST['fname'])) {
     setcookie("firstname", $_POST['fname'], time() + (86400 * 30), "/");
     setcookie("middlename", $_POST['mname'], time() + (86400 * 30), "/");
     setcookie("lastname", $_POST['lname'], time() + (86400 * 30), "/");
+    setcookie("submit_time", time(), time() + (86400 * 30), "/");
+    
+    // Reload page to ensure cookies are set
+    header("Location: " . $_SERVER['PHP_SELF']);
+    exit();
 }
+
+$submitted = isset($_COOKIE['submit_time']);
+$elapsed = $submitted ? (time() - $_COOKIE['submit_time']) : 0;
 ?>
 <!DOCTYPE html>
 <html>
@@ -92,7 +100,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST['fname'])) {
             padding: 20px;
             border: 1px solid #ffb74d;
             border-radius: 4px;
-            display: none;
         }
         
         .info-box h3 {
@@ -107,7 +114,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST['fname'])) {
             background-color: white;
             border: 1px solid #ffe0b2;
             border-radius: 3px;
-            display: none;
         }
         
         .cookie-label {
@@ -125,6 +131,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST['fname'])) {
             font-size: 12px;
             color: #ff9800;
             font-weight: bold;
+        }
+        
+        .info-box button {
+            background-color: #666;
+            padding: 8px 16px;
+            font-size: 14px;
+            width: auto;
+        }
+        
+        .info-box button:hover {
+            background-color: #555;
         }
     </style>
 </head>
@@ -152,101 +169,65 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST['fname'])) {
             <button type="submit">Set Cookies</button>
         </form>
 
-        <div class="info-box" id="infoBox">
+        <div class="info-box" id="infoBox" <?php echo !$submitted ? 'style="display: none;"' : ''; ?>>
             <h3>Cookie Display Timeline</h3>
-            <div id="timer10" class="cookie-display">
-                <span class="timer">After 10 seconds:</span>
-                <div class="cookie-label">First Name:</div>
-                <div class="cookie-value" id="fname10"></div>
-                <div class="cookie-label">Middle Name:</div>
-                <div class="cookie-value" id="mname10"></div>
-                <div class="cookie-label">Last Name:</div>
-                <div class="cookie-value" id="lname10"></div>
-            </div>
-
-            <div id="timer20" class="cookie-display">
-                <span class="timer">After 20 seconds:</span>
-                <div class="cookie-label">First Name:</div>
-                <div class="cookie-value" id="fname20"></div>
-                <div class="cookie-label">Middle Name:</div>
-                <div class="cookie-value" id="mname20"></div>
-                <div class="cookie-label">Last Name:</div>
-                <div class="cookie-value" id="lname20"></div>
-            </div>
-
-            <div id="timer30" class="cookie-display">
-                <span class="timer">After 30 seconds:</span>
-                <div class="cookie-label">First Name:</div>
-                <div class="cookie-value" id="fname30"></div>
-                <div class="cookie-label">Middle Name:</div>
-                <div class="cookie-value" id="mname30"></div>
-                <div class="cookie-label">Last Name:</div>
-                <div class="cookie-value" id="lname30"></div>
+            <p style="text-align: center; color: #666; margin-bottom: 20px;">Click the refresh button to check cookies at different times</p>
+            
+            <?php
+            if ($submitted) {
+                if ($elapsed < 10) {
+                    echo "<p style='text-align: center; color: #666;'><strong>Elapsed time: " . $elapsed . " seconds</strong><br>Refresh again at 10+ seconds to see cookies.</p>";
+                } else {
+                    // Show 10 seconds (visible from 10+ seconds)
+                    if ($elapsed >= 10) {
+                        echo "<div class='cookie-display'>";
+                        echo "<span class='timer'>After 10 seconds:</span>";
+                        echo "<div class='cookie-label'>First Name:</div>";
+                        echo "<div class='cookie-value'>" . (isset($_COOKIE['firstname']) ? $_COOKIE['firstname'] : '(empty)') . "</div>";
+                        echo "<div class='cookie-label'>Middle Name:</div>";
+                        echo "<div class='cookie-value'>" . (isset($_COOKIE['middlename']) ? $_COOKIE['middlename'] : '(empty)') . "</div>";
+                        echo "<div class='cookie-label'>Last Name:</div>";
+                        echo "<div class='cookie-value'>" . (isset($_COOKIE['lastname']) ? $_COOKIE['lastname'] : '(empty)') . "</div>";
+                        echo "</div>";
+                    }
+                    
+                    // Show 20 seconds (visible from 20+ seconds)
+                    if ($elapsed >= 20) {
+                        echo "<div class='cookie-display'>";
+                        echo "<span class='timer'>After 20 seconds:</span>";
+                        echo "<div class='cookie-label'>First Name:</div>";
+                        echo "<div class='cookie-value'>" . (isset($_COOKIE['firstname']) ? $_COOKIE['firstname'] : '(empty)') . "</div>";
+                        echo "<div class='cookie-label'>Middle Name:</div>";
+                        echo "<div class='cookie-value'>" . (isset($_COOKIE['middlename']) ? $_COOKIE['middlename'] : '(empty)') . "</div>";
+                        echo "<div class='cookie-label'>Last Name:</div>";
+                        echo "<div class='cookie-value'>" . (isset($_COOKIE['lastname']) ? $_COOKIE['lastname'] : '(empty)') . "</div>";
+                        echo "</div>";
+                    }
+                    
+                    // Show 30 seconds (visible from 30+ seconds, disappears at 35+ seconds)
+                    if ($elapsed >= 30 && $elapsed < 35) {
+                        echo "<div class='cookie-display'>";
+                        echo "<span class='timer'>After 30 seconds:</span>";
+                        echo "<div class='cookie-label'>First Name:</div>";
+                        echo "<div class='cookie-value'>" . (isset($_COOKIE['firstname']) ? $_COOKIE['firstname'] : '(empty)') . "</div>";
+                        echo "<div class='cookie-label'>Middle Name:</div>";
+                        echo "<div class='cookie-value'>" . (isset($_COOKIE['middlename']) ? $_COOKIE['middlename'] : '(empty)') . "</div>";
+                        echo "<div class='cookie-label'>Last Name:</div>";
+                        echo "<div class='cookie-value'>" . (isset($_COOKIE['lastname']) ? $_COOKIE['lastname'] : '(empty)') . "</div>";
+                        echo "</div>";
+                    }
+                    
+                    if ($elapsed >= 35) {
+                        echo "<p style='text-align: center; color: #999; margin-top: 10px; font-size: 12px;'><em>30 seconds display has been removed</em></p>";
+                    }
+                }
+            }
+            ?>
+            
+            <div style="text-align: center; margin-top: 20px;">
+                <button type="button" onclick="location.reload();" style="background-color: #666; color: white; cursor: pointer; width: auto; padding: 8px 16px; font-size: 14px; border: none; border-radius: 4px;">Refresh Page</button>
             </div>
         </div>
     </div>
-
-    <script>
-        function getCookie(name) {
-            var nameEQ = name + "=";
-            var ca = document.cookie.split(';');
-            for(var i = 0; i < ca.length; i++) {
-                var c = ca[i].trim();
-                if (c.indexOf(nameEQ) == 0) {
-                    return c.substring(nameEQ.length, c.length);
-                }
-            }
-            return "";
-        }
-
-        function displayCookies() {
-            var infoBox = document.getElementById('infoBox');
-            
-            // Check if cookies are set
-            if (getCookie("firstname") != "") {
-                infoBox.style.display = "block";
-            }
-        }
-
-        // Display cookies after 10 seconds
-        setTimeout(function() {
-            var timer10 = document.getElementById('timer10');
-            timer10.style.display = "block";
-            document.getElementById('fname10').textContent = getCookie("firstname");
-            document.getElementById('mname10').textContent = getCookie("middlename");
-            document.getElementById('lname10').textContent = getCookie("lastname");
-        }, 10000);
-
-        // Display cookies after 20 seconds
-        setTimeout(function() {
-            var timer20 = document.getElementById('timer20');
-            timer20.style.display = "block";
-            document.getElementById('fname20').textContent = getCookie("firstname");
-            document.getElementById('mname20').textContent = getCookie("middlename");
-            document.getElementById('lname20').textContent = getCookie("lastname");
-        }, 20000);
-
-        // Display cookies after 30 seconds
-        setTimeout(function() {
-            var timer30 = document.getElementById('timer30');
-            timer30.style.display = "block";
-            document.getElementById('fname30').textContent = getCookie("firstname");
-            document.getElementById('mname30').textContent = getCookie("middlename");
-            document.getElementById('lname30').textContent = getCookie("lastname");
-            
-            // Delete cookies after displaying them at 30 seconds
-            document.cookie = "firstname=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-            document.cookie = "middlename=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-            document.cookie = "lastname=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-            
-            // Hide only the 30 seconds display after 5 more seconds (at 35 seconds total)
-            setTimeout(function() {
-                timer30.style.display = "none";
-            }, 5000);
-        }, 30000);
-
-        // Check on page load
-        window.addEventListener('load', displayCookies);
-    </script>
 </body>
 </html>
