@@ -11,12 +11,13 @@ $fields = [
     "contact_number" => "Contact Number",
 ];
 
+$isSubmitted = $_SERVER["REQUEST_METHOD"] === "POST";
 $formData = [];
+
 foreach ($fields as $name => $label) {
     $formData[$name] = $_POST[$name] ?? "";
 }
 
-$isSubmitted = $_SERVER["REQUEST_METHOD"] === "POST";
 $passwordsMatch = $formData["password"] === $formData["confirm_password"];
 
 function e($value)
@@ -29,11 +30,10 @@ function e($value)
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration Module</title>
+    <title>Activity A - Number 1</title>
     <style>
         :root {
             --bg: #f4f7fb;
-            --panel: #ffffff;
             --ink: #172033;
             --muted: #667085;
             --line: #d9e1ec;
@@ -65,8 +65,16 @@ function e($value)
             margin: 48px auto;
         }
 
-        .hero {
-            margin-bottom: 22px;
+        .top-link {
+            display: inline-flex;
+            margin-bottom: 24px;
+            border-radius: 999px;
+            background: #eff6ff;
+            color: var(--accent);
+            padding: 9px 14px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 800;
         }
 
         .eyebrow {
@@ -86,7 +94,7 @@ function e($value)
 
         .subtitle {
             max-width: 620px;
-            margin: 12px 0 0;
+            margin: 12px 0 28px;
             color: var(--muted);
             font-size: 16px;
             line-height: 1.6;
@@ -131,7 +139,8 @@ function e($value)
             font-weight: 700;
         }
 
-        .form-grid {
+        .form-grid,
+        .result-grid {
             display: grid;
             grid-template-columns: repeat(2, minmax(0, 1fr));
             gap: 18px;
@@ -196,8 +205,6 @@ function e($value)
         }
 
         .result-grid {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
             gap: 12px;
             margin-top: 16px;
         }
@@ -264,8 +271,10 @@ function e($value)
 </head>
 <body>
     <main class="page">
-        <section class="hero">
-            <p class="eyebrow">Activity A</p>
+        <a class="top-link" href="number-2.php">Go to Number 2</a>
+
+        <section>
+            <p class="eyebrow">Activity A - Number 1</p>
             <h1>Registration Module</h1>
             <p class="subtitle">Enter your personal information and submit the form. The details will appear below only when the password and confirm password fields match.</p>
         </section>
@@ -294,7 +303,7 @@ function e($value)
             <button type="submit">Submit Registration</button>
         </form>
 
-        <p class="copyright">&copy; Crix Brix</p>
+        <p class="copyright">&copy; JFranz_13</p>
 
         <?php if ($isSubmitted && !$passwordsMatch) { ?>
             <p class="error">password and confirm password are not the same</p>
